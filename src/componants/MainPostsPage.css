@@ -1,0 +1,57 @@
+a {
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.a:after {
+    content: "";
+    display: block;
+    background-color: purple;
+    width: 0%;
+    height: 3px;
+    transition: width 0.7s;
+
+}
+
+.a:hover:after {
+    width: 100%;
+}
+
+.links {
+    display: flex;
+}
+
+ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-div {
+    display: flex;
+    gap: 16px;
+
+}
+
+.css-1t1j96h-MuiPaper-root-MuiDialog-paper {
+    width: 100%;
+    border-radius: 10px !important;
+    margin-bottom: 440px !important;
+}
+
+.modal-btn {
+    width: 8%;
+    border-radius: 8px !important;
+}
+
+.css-9mgopn-MuiDivider-root {
+    border-color: #0000004a !important;
+}
+
+.css-jy9l7s {
+    align-items: center;
+}
+
+.css-1j97218 {
+    margin-bottom: 30px;
+}

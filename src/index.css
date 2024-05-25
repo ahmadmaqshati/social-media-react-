@@ -5,9 +5,63 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #8080801f;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+@media (max-width: 400px) {
+  body {
+    background: red;
+    /*  overflow: hidden; */
+  }
+
+  .topnav {
+    background-color: aqua !important;
+
+
+  }
+
+  a {
+    margin: 0px !important;
+    /*  font-size: 0.8rem; */
+    padding: 0 2px;
+  }
+
+  .links {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  * {
+    font-size: 0.9rem;
+  }
+
+  .css-1rwt2y5-MuiButtonBase-root-MuiButton-root {
+    padding: 5px 5px !important;
+
+  }
+
+  .register {
+    margin-right: 6px !important;
+  }
+
+  button {
+    font-size: 0.8rem !important
+  }
+
+
+}
+
+/* .links {
+  background: black;
+  margin-right: 10px;
+} */
