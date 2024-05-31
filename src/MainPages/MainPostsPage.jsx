@@ -8,18 +8,9 @@ export function MainPostsPage() {
     return (
 
         <Box>
-
-
             <div>
                 <Post />
             </div>
-
-            {/* <Post />
-            <Post />
-            <Post />
-            <Post />
-            <Post /> */}
-
         </Box>
     )
 }

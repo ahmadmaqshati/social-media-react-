@@ -12,6 +12,10 @@ import CloseIcon from '@mui/icons-material/Close';
 import TextField from '@mui/material/TextField'
 import { styled } from '@mui/material/styles';
 import { Outlet } from 'react-router-dom';
+import axios from "axios";
+import { useEffect } from "react";
+/* import { LoginDialog } from "./LoginDialog"; */
+import { useState } from "react";
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
     '& .MuiDialogContent-root': {
@@ -24,6 +28,7 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
 
 
 export function Layout() {
+
     /* State for open and close (login-dielog) */
     const [openLogin, setOpenLogin] = React.useState(false);
 
@@ -36,6 +41,11 @@ export function Layout() {
     /* ==State for open and close login-dielog== */
 
 
+
+
+
+
+
     /* State for open and close (register-dielog) */
     const [openSignup, setOpenSignup] = React.useState(false);
 
@@ -46,6 +56,36 @@ export function Layout() {
         setOpenSignup(false);
     };
     /* ==State for open and close register-dielog== */
+
+    function loginRequest() {
+        const pramars = {
+            "username": "ahamdyarob",
+            "password": '123456',
+        }
+        fetch('https://tarmeezacademy.com/api/v1/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(
+                pramars
+            )
+        }).then(res => res.json()).then(response => {
+            console.log(response)
+        })
+
+    }
+    useEffect(() => {
+        loginRequest()
+    }, [])
+
+    /* 
+    axios.post('https://tarmeezacademy.com/api/v1/login', pramars)
+                .then((response) => {
+                    console.log(response);
+                })
+    */
+
 
     return (
         <Container maxWidth='md'>
@@ -66,15 +106,16 @@ export function Layout() {
                             </div>
 
                             <div className='btn-div'>
-                                <Button style={{}} variant='outlined' onClick={handleOpenLogin} >
+                                <Button className="login-btn" style={{}} variant='outlined' onClick={handleOpenLogin}>
                                     Login
                                 </Button>
-                                <Button className='register' style={{ marginRight: "15px", }} variant='outlined' onClick={handleOpenRegister}>
+                                <Button className='register-btn' style={{ marginRight: "15px", }} variant='outlined' onClick={handleOpenRegister}>
                                     Register
                                 </Button>
                             </div>
                         </ul>
                     </AppBar>
+
 
 
                     {/* Login-Dialog */}
@@ -121,13 +162,12 @@ export function Layout() {
                                         defaultValue=""
                                     />
                                 </div>
-
                             </DialogContent>
                             <DialogActions>
                                 <Button onClick={handleCloseLogin} className='modal-btn' variant="contained" style={{ background: "#6C757D" }} >
                                     Close
                                 </Button>
-                                <Button className='modal-btn' variant="contained" style={{ marginRight: "10px" }} >
+                                <Button onClick={loginRequest} className='modal-btn' variant="contained" style={{ marginRight: "10px" }} >
                                     Login
                                 </Button>
 
@@ -225,7 +265,8 @@ export function Layout() {
             </div>
 
             <Outlet />
-
+            {/*   <LoginDialog /> */}
         </Container>
     )
 }
+/* handleOpenLogin, handleCloseLogin */

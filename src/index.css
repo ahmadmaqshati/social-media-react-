@@ -61,7 +61,12 @@ code {
 
 }
 
-/* .links {
-  background: black;
-  margin-right: 10px;
-} */
+
+.login-btn:hover {
+  background-color: #a52a2a47 !important;
+}
+
+.register-btn:hover {
+  background-color: #a52a2a47 !important;
+
+}

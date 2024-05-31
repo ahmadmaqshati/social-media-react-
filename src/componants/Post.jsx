@@ -13,25 +13,21 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 
 export function Post() {
+    //state for posts of resposnse
     const [posts, setPosts] = useState([])
 
     const baseUrl = 'https://tarmeezacademy.com/api/v1'
-    async function getPost() {
+
+    //request for getting the posts
+    /* async function getPost() {
         const response = await axios.get(`${baseUrl}/posts`)
-
-        /*  .then((response) => {
-             setPosts(response.data.data)
-         }) */
         setPosts(response.data.data)
-
     }
 
     useEffect(() => {
         getPost()
     }, [])
-
-
-
+ */
 
     return (
 
